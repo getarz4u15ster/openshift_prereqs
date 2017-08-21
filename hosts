@@ -1,0 +1,10 @@
+# Nodes designated for Openshift Masters
+[ocp-master]
+host1
+host2
+
+
+# Nodes designated for Openshift compute nodes
+[ocp-node]
+host2
+host3

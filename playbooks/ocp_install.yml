@@ -1,0 +1,10 @@
+---
+- name: Install Pre-requisite package and configure Openshift Container Platform 3.5 Systems for install on Master Nodes
+  hosts: ocp-master
+  roles:
+    - ocp-master
+    
+- name: Install Pre-requisite packages and configure Openshift Container PLaform 3.5 Systems for install on Compute Nodes
+  hosts: ocp-node
+  roles: 
+    - ocp-node
