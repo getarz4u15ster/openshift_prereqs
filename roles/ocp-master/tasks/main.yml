@@ -69,6 +69,10 @@
       stat:
         path: /dev/docker-vg
         register: dockervg_result
+    
+    - name: Creating Docker thing Pools and Configuring storage for docker Containers
+      command: "docker-storage-setup"
+      when: dockervg_result.stat.exists == False
         
     - name: Creating Docker deamon file
       copy:
