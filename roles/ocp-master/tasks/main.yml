@@ -22,7 +22,7 @@
         state: started
         enabled: true
         
-    - name: Enable Repos Specific to OCp 3.5
+    - name: Enable Repos Specific to OCP 3.5
       command: subscription-manager repos --enable="rhel--7-server-rpms" --enable="rhel-7-server-extras-rpms" --enable"rhel-7-fast-datapath-rpms"
       
     - name: Update all hosts
@@ -56,18 +56,6 @@
         owner: root
         group: root
         mode: 755
-        
-    - name: Checking if registry cert location has been created for docker
-      stat:
-        path: /etc/docker/certs.d/registry.access.redhat.com
-        state: directory
-        mode: 0600
-      when: ca_result.stat.exists == False
-      
-    - name: Move ca root certificate for docker registry in place
-      copy:
-        src: ca.crt
-        dest: "{{ ca_root }}"
         
     - name: check if docker-vg exists
       stat:
