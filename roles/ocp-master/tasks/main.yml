@@ -1,4 +1,8 @@
 ---
+    - name: rhn_registration | main | Check if user is using RHEL
+      assert:
+        that: "ansible_distribution == 'RedHat'"
+    
     - name: Install Katello rpm for satellite registration
       yum:
         name: "https://{{sat_svr}}/pub/katello-ca-consumer-latest.noarch.rpm"
