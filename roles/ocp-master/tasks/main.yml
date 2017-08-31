@@ -1,5 +1,5 @@
 ---
-    - name: rhn_registration | main | Check if user is using RHEL
+    - name: Check if user is using RHEL
       assert:
         that: "ansible_distribution == 'RedHat'"
     
