@@ -30,24 +30,20 @@
         name: '*'
         state: latest
         
-    - name: Installing Dependencies for Openshift Container Platform V3.5
-      action: "{{ ansible_pkg_mgr }}"
-      args:
-        name: "{{ item.name }}"
-        state: "{{ item.state }}"
-      with_items:
-        - { katello-agent, state: present }
-        - { wget, state: present }
-        - { git, state: present }
-        - { net-tools: state: present }
-        - { bind-utils, state: present }
-        - { iptables-services, state: present }
-        - { bridge-utils, state: present }
-        - { sos, state: present }
-        - { psacct, state: present }
-        - { atomic-openshift-utils, state: present }
-        - { docker, state: present }
-        - { NetworkManager, state: present }
+    - name: Installing Dependencies for Openshift Container Platform
+      yum:
+        name:
+          - wget
+          - git
+          - net-tools
+          - bind-utils
+          - iptables-services
+          - bridge-utils
+          - sos
+          - psacct
+          - atomic-openshift-utils
+          - docker
+          - NetworkManager
     
     - name: Creating Docker Storage Configuration File
       copy:
@@ -59,12 +55,18 @@
         
     - name: check if docker-vg exists
       stat:
-        path: /dev/docker-vg
+        path: "{{ item }}"
         register: dockervg_result
-    
+      with_items:
+        - "/dev/docker-vg"
+
+    - name: check if docker pool LV exists
+      command: lv display | grep docker-pool
+      register: pool_result
+        
     - name: Creating Docker thing Pools and Configuring storage for docker Containers
       command: "docker-storage-setup"
-      when: dockervg_result.stat.exists == False
+      when: dockervg_result.stat.exists == False or pool_result == false
         
     - name: Creating Docker deamon file
       copy:
