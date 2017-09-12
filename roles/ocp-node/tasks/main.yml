@@ -22,9 +22,9 @@
         state: started
         enabled: true
         
-    - name: Open ports required for OCP
+    - name: Open ports required for dnsmasq and dns for OCP
       firewalld:
-        port: {{ item }}
+        port: "{{ item }}"
         permanent: true
         state: enabled
       with_items:
@@ -32,6 +32,9 @@
         - 8053/tcp
         - 53/udp
         - 53/tcp
+        - 4789/udp
+        - 443/udp
+        - 8443/udp
  
     - name: Enable Repos Specific to OCP 3.5
       command: subscription-manager repos --enable="rhel--7-server-rpms" --enable="rhel-7-server-extras-rpms" --enable"rhel-7-fast-datapath-rpms"
