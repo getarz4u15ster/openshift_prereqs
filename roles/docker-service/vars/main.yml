@@ -1,0 +1,8 @@
+---
+    dest_location: /var/tmp
+    sat_srvr: <place_sat_server_here>
+    akey: <place_your_activation_key_here>
+    org:  <place_your_organization_id_here>
+    dockercfg: /etc/sysconfig
+    ca_root: /etc/docker/certs.d/registry.access.redhat.com
+    nm_conf: /etc/NetworkManager/

@@ -1,0 +1,8 @@
+#Edit this file to override any configuration options specified in 
+# /usr/lib/docker-storage-setup/docker-storage-setup
+#
+# For more details refer to "man docker-storage-setup"
+# DEV's option refers to the disk you are targeting. Device name Depends
+# on which disk is presented and available for use, it should be /dev/<devid>
+DEVS=/dev/input_device_name_here
+VG=docker-vg

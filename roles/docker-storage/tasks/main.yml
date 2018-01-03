@@ -1,0 +1,41 @@
+---
+    - name: Check if user is using RHEL
+      assert:
+        that: "ansible_distribution == 'RedHat'"
+    
+    - name: Creating Docker Storage Configuration File
+      copy:
+        src: docker-storage-setup
+        dest: "{{ dockercfg }}"
+        owner: root
+        group: root
+        mode: 755
+        
+    - name: check if docker-vg exists
+      stat:
+        path: "{{ item }}"
+        register: dockervg_result
+      with_items:
+        - "/dev/docker-vg"
+
+    - name: check if docker pool LV exists
+      command: lv display | grep docker-pool
+      register: pool_result
+        
+    - name: Creating Docker thing Pools and Configuring storage for docker Containers
+      command: "docker-storage-setup"
+      when: dockervg_result.stat.exists == False or pool_result == false
+        
+    - name: Creating Docker deamon file
+      copy:
+        src: docker
+        dest: "{{ dockercfg }}"
+        owner: root
+        group: root
+        mode: 0775
+        
+    - name: Enable docker service
+      systemd:
+        name: docker
+        state: started
+        enabled: True

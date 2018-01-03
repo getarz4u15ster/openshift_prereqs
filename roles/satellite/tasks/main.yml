@@ -1,0 +1,31 @@
+---
+    - name: Check if user is using RHEL
+      assert:
+        that: "ansible_distribution == 'RedHat'"
+    
+    - name: Install Katello rpm for satellite registration
+      yum:
+        name: "https://{{sat_svr}}/pub/katello-ca-consumer-latest.noarch.rpm"
+        state: installed
+      ignore_erros: true
+      
+    - name: Subscribing to Satellite Openshift Content Channel
+      redhat_subscription:
+        state: present
+        activationkey: "{{ akey }}"
+        org_id: "{{ org }}"
+      ignore_errors: true
+     
+    - name: Restart goferd
+      service:
+        name: goferd
+        state: started
+        enabled: true
+        
+    - name: Enable Repos Specific to OCP 3.5
+      command: subscription-manager repos --enable="rhel--7-server-rpms" --enable="rhel-7-server-extras-rpms" --enable"rhel-7-fast-datapath-rpms"
+      
+    - name: Update all hosts
+      yum:
+        name: '*'
+        state: latest

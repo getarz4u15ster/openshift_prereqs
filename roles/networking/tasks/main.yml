@@ -1,0 +1,14 @@
+---
+    - name: Ensure NetworkManager Setting for dns is disabled
+      copy:
+        src: NetworkManager.conf
+        dest: "{{ nm_conf }}"
+        owner: root
+        group: root
+        mode: 0644
+        
+    - name: Restart NetworkManager
+      systemd:
+        name: NetworkManager
+        state: restarted
+        enabled: True

@@ -1,0 +1,18 @@
+---
+    - name: Check if user is using RHEL
+      assert:
+        that: "ansible_distribution == 'RedHat'"
+    
+    - name: Creating Docker deamon file
+      copy:
+        src: docker
+        dest: "{{ dockercfg }}"
+        owner: root
+        group: root
+        mode: 0775
+        
+    - name: Enable docker service
+      systemd:
+        name: docker
+        state: started
+        enabled: True

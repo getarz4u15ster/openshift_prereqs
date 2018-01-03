@@ -1,0 +1,17 @@
+---
+    - name: Open ports required for dnsmasq and dns for OCP
+      firewalld:
+        port: "{{ item }}"
+        permanent: true
+        state: enabled
+      with_items:
+        - 8053/udp
+        - 8053/tcp
+        - 53/udp
+        - 2049/tcp
+        - 2049/udp
+        - 2379/tcp
+        - 2380/udp
+        - 4001/tcp
+        - 4789/tcp
+        - 10250/tcp
