@@ -3,7 +3,7 @@
   hosts: ocp-node
   roles: 
     - firewall
-    - networking
-    - satellite
-    - ocp-packages
     - docker-service
+    - networking
+    #- ocp_packages
+    #- satellite

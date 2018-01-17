@@ -3,7 +3,8 @@
   hosts: ocp-master
   roles:
     - docker-storage
+    - docker-service
     - firewall
     - networking
-    - ocp_packages
-    - satellite
+    #- ocp_packages
+    #- satellite
