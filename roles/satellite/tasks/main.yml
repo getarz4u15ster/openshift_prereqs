@@ -21,10 +21,7 @@
         name: goferd
         state: started
         enabled: true
-        
-    - name: Enable Repos Specific to OCP 3.5
-      command: subscription-manager repos --enable="rhel--7-server-rpms" --enable="rhel-7-server-extras-rpms" --enable"rhel-7-fast-datapath-rpms"
-      
+     
     - name: Update all hosts
       yum:
         name: '*'
