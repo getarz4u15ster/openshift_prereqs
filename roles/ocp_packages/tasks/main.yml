@@ -3,8 +3,8 @@
       assert:
         that: "ansible_distribution == 'RedHat'"
     
-    - name: Enable Repos Specific to OCP 3.5
-      command: subscription-manager repos --enable="rhel--7-server-rpms" --enable="rhel-7-server-extras-rpms" --enable"rhel-7-fast-datapath-rpms"
+    - name: Enable Repos Specific to OCP 3.6
+      command: subscription-manager repos --enable="rhel-7-server-rpms" --enable="rhel-7-server-extras-rpms" --enable"rhel-7-fast-datapath-rpms"
       
     - name: Installing Dependencies for Openshift Container Platform
       yum:
