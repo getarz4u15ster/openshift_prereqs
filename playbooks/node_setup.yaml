@@ -7,3 +7,4 @@
     - networking
     - ocp_packages
     - satellite
+    - selinux
