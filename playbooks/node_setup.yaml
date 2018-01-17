@@ -5,5 +5,5 @@
     - firewall
     - docker-service
     - networking
-    #- ocp_packages
-    #- satellite
+    - ocp_packages
+    - satellite
