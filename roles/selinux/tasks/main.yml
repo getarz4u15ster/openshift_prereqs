@@ -1,5 +1,0 @@
----
-  - name: Ensure SELINUX is Enforcing and set to targeted approach
-    selinux:
-      policy: targeted
-      state: enforcing
