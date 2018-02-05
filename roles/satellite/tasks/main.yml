@@ -1,7 +1,7 @@
 ---
     - name: Check if user is using RHEL
       assert:
-        that: "ansible_distribution == 'RedHat'"
+        that: "ansible_os_family == 'RedHat'"
     
     - name: Install Katello rpm for satellite registration
       yum:
