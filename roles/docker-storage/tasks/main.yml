@@ -1,8 +1,4 @@
 ---
-    - name: Check if user is using RHEL
-      assert:
-        that: "ansible_distribution == 'RedHat'"
-    
     - name: Creating Docker Storage Configuration File
       copy:
         src: docker-storage-setup
@@ -13,7 +9,7 @@
         
     - name: Check if docker-vg exists
       stat:
-        path: /dev/{{ docker-vg }}
+        path: /dev/{{ dockervg }}
       register: dockervg_result
 
     - name: Check if docker pool LV exists
@@ -22,4 +18,4 @@
         
     - name: Creating Docker thing Pools and Configuring storage for docker Containers
       command: "docker-storage-setup"
-      when: dockervg_result.stat.exists == False or pool_result == false
+      when: (dockervg_result.stat.exists == false or pool_result == false)

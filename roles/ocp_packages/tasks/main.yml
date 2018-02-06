@@ -1,8 +1,4 @@
 ---
-    - name: Check if user is using RHEL
-      assert:
-        that: "ansible_os_family == 'RedHat'"
-    
     - name: Enable Repos Specific to OCP 3.6
       command: subscription-manager repos --enable="rhel-7-server-rpms" --enable="rhel-7-server-ose-3.6-rpms" --enable="rhel-7-server-extras-rpms" --enable"rhel-7-fast-datapath-rpms"
       

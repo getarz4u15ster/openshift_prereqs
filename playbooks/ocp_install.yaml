@@ -5,13 +5,14 @@
     - docker-storage
     - firewall
     - networking
-    - ocp_packages
     - satellite 
+    - ocp_packages
+
 - name: Install Pre-requisite packages and configure Openshift Container PLaform 3.5 Systems for install on Compute Nodes
   hosts: ocp-node
   roles: 
     - firewall
     - docker-service
     - networking
-    - ocp_packages
     - satellite
+    - ocp_packages

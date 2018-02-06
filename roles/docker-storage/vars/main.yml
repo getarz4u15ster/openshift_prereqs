@@ -1,4 +1,4 @@
 ---
     dockercfg: /etc/sysconfig
     ca_root: /etc/docker/certs.d/registry.access.redhat.com
-    docker_vg: docker
+    dockervg: docker

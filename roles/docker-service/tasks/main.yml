@@ -1,8 +1,4 @@
 ---
-    - name: Check if user is using RHEL
-      assert:
-        that: "ansible_os_family == 'RedHat'"
-    
     - name: Creating Docker deamon file
       copy:
         src: docker
