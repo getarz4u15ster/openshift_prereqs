@@ -1,0 +1,3 @@
+---
+# this file contains handlers
+ selinux: /etc/selinux/
