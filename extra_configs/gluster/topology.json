@@ -1,0 +1,179 @@
+{
+    "clusters": [
+        {
+            "nodes": [
+                {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "10.54.100.11"
+                            ],
+                            "storage": [
+                                "10.54.100.11"
+                            ]
+                        },
+                        "zone":
+                    },
+                    "devices": [
+                        "/dev/sda",
+                        "/dev/sdb",
+                        "/dev/sdc",
+                        "/dev/sdd",
+                        "/dev/sde",
+                        "/dev/sdf",
+                        "/dev/sdg",
+                        "/dev/sdh"
+                        "/dev/sdi"
+                        "/dev/sdj"
+                        "/dev/sdk"
+                        "/dev/sdl"
+                        "/dev/sdm"
+                        "/dev/sdn"
+                    ]
+                },
+                {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "10.54.100.12"
+                            ],
+                            "storage": [
+                                "10.54.100.12"
+                            ]
+                        },
+                        "zone":
+                    },
+                    "devices": [
+                        "/dev/sda",
+                        "/dev/sdb",
+                        "/dev/sdc",
+                        "/dev/sdd",
+                        "/dev/sde",
+                        "/dev/sdf",
+                        "/dev/sdg",
+                        "/dev/sdh"
+                        "/dev/sdi"
+                        "/dev/sdj"
+                        "/dev/sdk"
+                        "/dev/sdl"
+                        "/dev/sdm"
+                        "/dev/sdn"
+                    ]
+               },
+               {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "10.54.100.13"
+                            ],
+                            "storage": [
+                                "10.54.100.13"
+                            ]
+                        },
+                        "zone":
+                    },
+                    "devices": [
+                        "/dev/sda",
+                        "/dev/sdb",
+                        "/dev/sdc",
+                        "/dev/sdd",
+                        "/dev/sde",
+                        "/dev/sdf",
+                        "/dev/sdg",
+                        "/dev/sdh"
+                        "/dev/sdi"
+                        "/dev/sdj"
+                        "/dev/sdk"
+                        "/dev/sdl"
+                        "/dev/sdm"
+                        "/dev/sdn"
+                    ]
+                },
+                {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "10.54.100.14"
+                            ],
+                            "storage": [
+                                "10.54.100.14"
+                            ]
+                        },
+                        "zone":
+                    },
+                    "devices": [
+                        "/dev/sda",
+                        "/dev/sdb",
+                        "/dev/sdc",
+                        "/dev/sdd",
+                        "/dev/sde",
+                        "/dev/sdf",
+                        "/dev/sdg",
+                        "/dev/sdh"
+                        "/dev/sdi"
+                        "/dev/sdj"
+                        "/dev/sdk"
+                        "/dev/sdl"
+                        "/dev/sdm"
+                        "/dev/sdn"
+                    ]
+                 },
+                 {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "10.54.100.15"
+                            ],
+                            "storage": [
+                                "10.54.100.15"
+                            ]
+                        },
+                        "zone":
+                    },
+                    "devices": [
+                        "/dev/sda",
+                        "/dev/sdb",
+                        "/dev/sdc",
+                        "/dev/sdd",
+                        "/dev/sde",
+                        "/dev/sdf",
+                        "/dev/sdg",
+                        "/dev/sdh"
+                        "/dev/sdi"
+                        "/dev/sdj"
+                        "/dev/sdk"
+                        "/dev/sdl"
+                        "/dev/sdm"
+                        "/dev/sdn"
+                    ]
+                  },
+                  {
+                    "node": {
+                        "hostnames": {
+                            "manage": [
+                                "10.54.100.16"
+                            ],
+                            "storage": [
+                                "10.54.100.16"
+                            ]
+                        },
+                        "zone":
+                    },
+                    "devices": [
+                        "/dev/sda",
+                        "/dev/sdb",
+                        "/dev/sdc",
+                        "/dev/sdd",
+                        "/dev/sde",
+                        "/dev/sdf",
+                        "/dev/sdg",
+                        "/dev/sdh"
+                        "/dev/sdi"
+                        "/dev/sdj"
+                        "/dev/sdk"
+                        "/dev/sdl"
+                        "/dev/sdm"
+                        "/dev/sdn"
+                    ]
+                },
+
